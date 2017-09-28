@@ -1,0 +1,31 @@
+pply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+// This is the library version used when deploying the artifact
+version = "1.0.0"
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    resourcePrefix "LoadingPage__"	//这个随便填
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName version
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'
+}
+
+def siteUrl = 'https://github.com/zhengxiaopeng/BounceProgressBar'      // 项目的主页
+def gitUrl = 'https://github.com/zhengxiaopeng/BounceProgressBar.git'   // Git仓库的url
